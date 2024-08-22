@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="projet_fede.css">
+  <title>login/connexion</title>
+</head>
+
+<body>
+  <h1>Login / connexion</h1>
+  <form action="login.php" method="POST" class="box">
+    <label for="email">Email : </label>
+    <input type="email" name="email" id="email">
+    <br>
+    <label for="password">Password / mot de passe :</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <button type="submit" id="submit2" name="submit2">login / connexion</button><br>
+    <a href="créer_un_compte.html" id="lien">créer un compte</a>
+
+  </form>
+  <br>
+  <div id="error"></div>
+  <script>
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let merror = document.getElementById("error");
+
+    let submit2 = document.getElementById("submit2");
+
+    submit2.style.backgroundColor = 'rgb(0, 153, 255)';
+    submit2.style.color = 'white';
+
+    submit2.addEventListener("click", (e) => {
+
+      let login = [{ element: password }, { element: email }];
+
+
+      login.forEach((log) => {
+        if (log.element.value == "") {
+          e.preventDefault();
+          merror.innerText = "Tous les champs sont obligatoires";
+          merror.style.textAlign = "center";
+
+          log.element.style.border = "red solid 1px";
+        
+        } else {
+          log.element.style.border = "";
+        }
+
+      }) 
+      
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>
