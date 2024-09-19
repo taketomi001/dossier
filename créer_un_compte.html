@@ -25,49 +25,53 @@
     <button type="submit" id="submit1" name="submit1">create / créer</button>
     <br>
     <button type="submit" id="connecter" name="connecter">se connecter</button>
-    
-  
+
+
   </form>
-  
+
   <br>
   <div id="error"></div>
-  <script>
-    let email = document.getElementById("email");
-    let password1 = document.getElementById("password1");
-    let password2 = document.getElementById("password2");
-    let submit1 = document.getElementById("submit1");
-    let merror = document.getElementById("error");
-    let connecter = document.getElementById('connecter');
 
-    
-    connecter.style.backgroundColor = ' rgb(0, 153, 255)';
-    connecter.style.color = 'white';
-    
 
-    submit1.style.backgroundColor = ' rgb(0, 153, 255)';
-    submit1.style.color = 'white';
 
-    submit1.addEventListener("click", (e) => {
-      let creer = [
-        { element: email },
-        { element: password1 },
-        { element: password2 },
-      ];
 
-      creer.forEach((field) => {
-        if (field.element.value === "") {
-          e.preventDefault();
-          merror.innerText = "Tous les champs sont obligatoires";
-          merror.style.textAlign = "center";
-          field.element.style.border = "red solid 1px";
-        } else {
-          field.element.style.border = ""; // Réinitialiser la bordure
-        }
-      });
+<script>
+  let email = document.getElementById("email");
+  let password1 = document.getElementById("password1");
+  let password2 = document.getElementById("password2");
+  let submit1 = document.getElementById("submit1");
+  let merror = document.getElementById("error");
+  let connecter = document.getElementById('connecter');
+
+
+  connecter.style.backgroundColor = ' rgb(0, 153, 255)';
+  connecter.style.color = 'white';
+
+
+  submit1.style.backgroundColor = ' rgb(0, 153, 255)';
+  submit1.style.color = 'white';
+
+  submit1.addEventListener("click", (e) => {
+    let creer = [
+      { element: email },
+      { element: password1 },
+      { element: password2 },
+    ];
+
+    creer.forEach((field) => {
+      if (field.element.value === "") {
+        e.preventDefault();
+        merror.innerText = "Tous les champs sont obligatoires";
+        merror.style.textAlign = "center";
+        field.element.style.border = "red solid 1px";
+      } else {
+        field.element.style.border = ""; // Réinitialiser la bordure
+      }
     });
+  });
 
-    
-  </script>
+
+</script>
 
 </body>
 
